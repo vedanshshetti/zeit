@@ -1,18 +1,21 @@
-import { UnitOfTime, Wording } from "./types";
+import type { UnitOfTime, Wording } from "./types.js";
 
 /**
  * @private
  */
 export function parseWording(x: Wording) {
-  const pieces = x.split(" ");
-  if(x.startsWith("in")) return {
-    value: parseInt(pieces[1]) as number,
-    unit: pieces[2] as UnitOfTime
-  };
-  return {
-    value: parseInt(pieces[0]) as number,
-    unit: pieces[1] as UnitOfTime
+  const pieces = x.split(" ") as [string, string];
+  if (pieces.length !== 2) {
+    throw new Error(`Invalid wording format: "${x}". Expected format: "<number> <unit>"`);
   }
+  const value = parseInt(pieces[0], 10);
+  if (isNaN(value)) {
+    throw new Error(`Invalid number in wording: "${x}"`);
+  }
+  return {
+    value,
+    unit: pieces[1] as UnitOfTime
+  };
 }
 
 export function toLocalISOString(d: Date): string {
