@@ -1,4 +1,4 @@
-import { zeit } from "./index";
+import { zeit } from "./index.js";
 
 console.log(
   'zeit.before("5 hours").toString(): ',

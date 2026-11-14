@@ -1,7 +1,7 @@
 {
   "name": "@vedanshshetti/zeit",
   "version": "1.0.0",
-  "description": "A free, typed Date & Time libraru",
+  "description": "A free, typed Date & Time library",
   "keywords": [
     "zeit"
   ],
@@ -19,5 +19,11 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6"
+  },
+  "dependencies": {
+    "typescript": "^7.0.2"
   }
 }

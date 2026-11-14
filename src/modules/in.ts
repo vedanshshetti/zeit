@@ -1,5 +1,5 @@
-import { parseWording } from "../stuff";
-import { Wording } from "../types";
+import { parseWording } from "../stuff.js";
+import type { Wording } from "../types.js";
 
 const inX = (words: Wording) => {
   const now = new Date();

@@ -1,4 +1,4 @@
-import { toLocalISOString } from "../stuff";
+import { toLocalISOString } from "../stuff.js";
 
 type MNum = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
