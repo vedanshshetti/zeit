@@ -1,0 +1,23 @@
+{
+  "name": "@vedanshshetti/zeit",
+  "version": "1.0.0",
+  "description": "A free, typed Date & Time libraru",
+  "keywords": [
+    "zeit"
+  ],
+  "homepage": "https://github.com/vedanshshetti/zeit#readme",
+  "bugs": {
+    "url": "https://github.com/vedanshshetti/zeit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vedanshshetti/zeit.git"
+  },
+  "license": "EUPL-1.2",
+  "author": "Vedansh Shetti <vedansh.shetti@gmail.com>",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
