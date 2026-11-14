@@ -1,6 +1,6 @@
 {
   "name": "@vedanshshetti/zeit",
-  "version": "1.0.0",
+  "version": "1.1.0-post1",
   "description": "A free, typed Date & Time library",
   "keywords": [
     "zeit"
@@ -18,7 +18,8 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "tsc"
   },
   "devDependencies": {
     "@types/node": "^26.6.6"
