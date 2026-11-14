@@ -1,9 +1,9 @@
 import { parseWording } from "../stuff";
 import { Wording } from "../types";
 
-const before = (words: Wording, timezone: "utc" | "local" = "local") => {
+const before = (words: Wording) => {
   const now = new Date();
-  const d = timezone === "local" ? now : new Date(now.toISOString());
+  const d = now;
 
   const parsed = parseWording(words);
 

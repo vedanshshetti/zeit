@@ -1,12 +1,12 @@
 import { zeit } from "./index";
 
 console.log(
-  'zeit.before("5 hours", "local").toString(): ',
-  zeit.before("5 hours", "local").toString(),
+  'zeit.before("5 hours").toString(): ',
+  zeit.before("5 hours").toString(),
 );
-console.log('zeit.before("5 hours", "utc").toString(): ', zeit.before("5 hours", "utc").toString());
-console.log('zeit.in("5 hours", "local").toString(): ', zeit.in("5 hours", "local").toString());
-console.log('zeit.in("5 hours", "utc").toString(): ', zeit.in("5 hours", "utc").toString());
+console.log('zeit.before("5 hours").toString(): ', zeit.before("5 hours").toString());
+console.log('zeit.in("5 hours").toString(): ', zeit.in("5 hours").toString());
+console.log('zeit.in("5 hours").toString(): ', zeit.in("5 hours").toString());
 
 console.log(
   'zeit.now("ISO 8601:1-2019 Extended',
