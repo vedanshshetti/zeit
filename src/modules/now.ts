@@ -25,7 +25,7 @@ const getOrdinal = (n: number) => {
 };
 
 export default function now(
-  format: "Unix Epoch" | "ISO 8601:1-2019 Extended" | "Human Readable",
+  format: "Unix" | "ISO 8601:1-2019 Extended" | "Human Readable",
   timezone: "UTC" | "Local Time"="Local Time",
 ) {
   const isLocal = timezone == "Local Time";
@@ -34,7 +34,7 @@ export default function now(
   switch (format) {
     case "ISO 8601:1-2019 Extended":
       return isLocal ? toLocalISOString(d) : d.toISOString();
-    case "Unix Epoch":
+    case "Unix":
       return Date.now();
     case "Human Readable":
       return `${d.getDate()}${getOrdinal(d.getDate())} ${
