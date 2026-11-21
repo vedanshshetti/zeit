@@ -1,8 +1,8 @@
 import { toLocalISOString } from "../stuff.js";
 
-type MNum = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+type MonthNumber = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
-const monthsMap: Record<MNum, string> = {
+const monthsMap: Record<MonthNumber, string> = {
   "1": "January",
   "2": "February",
   "3": "March",
@@ -17,6 +17,7 @@ const monthsMap: Record<MNum, string> = {
   "12": "December",
 } as const;
 
+// AI Generated, I have no idea what this is but it works.
 const getOrdinal = (n: number) => {
   const s = ["th", "st", "nd", "rd"];
   const v = n % 100;
@@ -38,8 +39,8 @@ export default function now(
     case "Human Readable":
       return `${d.getDate()}${getOrdinal(d.getDate())} ${
         isLocal
-          ? monthsMap[(d.getMonth() + 1) as MNum]
-          : monthsMap[(d.getUTCMonth() + 1) as MNum]
+          ? monthsMap[(d.getMonth() + 1) as MonthNumber]
+          : monthsMap[(d.getUTCMonth() + 1) as MonthNumber]
       } ${d.getFullYear()}, ${d.getHours().toString().padStart(2, "0")}:${d.getMinutes().toString().padStart(2, "0")} (${d.getMilliseconds()}ms)`;
   }
 }
