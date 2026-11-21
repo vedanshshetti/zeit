@@ -21,13 +21,14 @@ const { zeit } = require("@vedanshshetti/zeit");
 
 ### Methods
 
-The `zeit` object provides three main methods:
+The `zeit` object provides four main methods:
 
 | Method | Description |
 |--------|-------------|
 | `zeit.now()` | Get the current date/time |
 | `zeit.in()` | Get a future date/time |
 | `zeit.before()` | Get a past date/time |
+| `zeit.greet()` | Get a time-based greeting |
 
 ---
 
@@ -38,7 +39,7 @@ Gets the current date and time in various formats.
 ### Parameters
 
 - **format** (required): One of:
-  - `"Unix Epoch"` - Returns milliseconds since Unix epoch
+  - `"Unix"` - Returns milliseconds since Unix epoch
   - `"ISO 8601:1-2019 Extended"` - Returns ISO 8601 formatted string
   - `"Human Readable"` - Returns a human-readable date string
 - **timezone** (optional): `"UTC"` or `"Local Time"` (default: `"Local Time"`)
@@ -47,7 +48,7 @@ Gets the current date and time in various formats.
 
 ```typescript
 // Get Unix epoch timestamp
-const epoch = zeit.now("Unix Epoch");
+const epoch = zeit.now("Unix");
 // => 1712345678901
 
 // Get ISO 8601 string in local time
@@ -168,16 +169,57 @@ console.log(pastDate.toISOString());
 
 ---
 
+## `zeit.greet()`
+
+Returns a time-based greeting for a given name. The greeting changes based on the current time of day.
+
+### Parameters
+
+- **name** (required): The name to greet
+- **language** (optional): `"English"` (default) or `"German"`
+
+### Time-based Greetings
+
+| Time Range | English | German |
+|------------|---------|--------|
+| 6:00 - 11:59 | Good Morning | Guten Morgen |
+| 12:00 - 17:59 | Good Afternoon | Guten Tag |
+| 18:00 - 20:59 | Good Evening | Guten Abend |
+| 21:00 - 5:59 | Good Night | Gute Nacht |
+
+### Examples
+
+```typescript
+// English greeting (default)
+const greeting1 = zeit.greet("Alice");
+// => "Good Morning Alice" (if between 6am-12pm)
+
+// English greeting explicit
+const greeting2 = zeit.greet("Bob", "English");
+// => "Good Afternoon Bob" (if between 12pm-6pm)
+
+// German greeting
+const greeting3 = zeit.greet("Anna", "German");
+// => "Guten Morgen Anna" (if between 6am-12pm)
+```
+
+### Return Value
+
+Returns a string with the appropriate greeting based on the current time.
+
+---
+
 ## Type Safety
 
 The library is fully typed with TypeScript:
 
 ```typescript
 // All methods are type-safe
-const epoch: number = zeit.now("Unix Epoch");
+const epoch: number = zeit.now("Unix");
 const iso: string = zeit.now("ISO 8601:1-2019 Extended");
 const date: Date = zeit.in("5 days");
 const pastDate: Date = zeit.before("2 hours");
+const greeting: string = zeit.greet("Alice");
 
 // Invalid formats are caught at compile time
 // @ts-expect-error - Invalid format
