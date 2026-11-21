@@ -23,8 +23,8 @@ console.log(
   zeit.now("ISO 8601:1-2019 Extended", "UTC"),
 );
 console.log(
-  'zeit.now("Unix Epoch") : ',
-  zeit.now("Unix Epoch"),
+  'zeit.now("Unix") : ',
+  zeit.now("Unix"),
 );
 console.log(
   'zeit.now("Human Readable") : ',
